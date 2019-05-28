@@ -29,34 +29,30 @@ const pointerEventsOff = () => {
     blue.style.pointerEvents = "none";
 }
 
+const clickButton = (num) => {
+    playerChoice.push(num);
+    buttonTrigger(num);
+    checkIfMatch();
+}
 
 const green = document.getElementById("1");
 green.addEventListener("click", () => {
-    alert('clicked');
-    playerChoice.push(1);
-    buttonTrigger(1);
-    checkIfMatch();
+    clickButton(1)
 });
 
 const red = document.getElementById("2");
 red.addEventListener("click", () => {
-    playerChoice.push(2);
-    buttonTrigger(2);
-    checkIfMatch();
+    clickButton(2)
 });
 
 const yellow = document.getElementById("3");
 yellow.addEventListener("click", () => {
-    playerChoice.push(3);
-    buttonTrigger(3);
-    checkIfMatch();
+    clickButton(3)
 });
 
 const blue = document.getElementById("4");
 blue.addEventListener("click", () => {
-    playerChoice.push(4);
-    buttonTrigger(4);
-    checkIfMatch();
+    clickButton(4)
 });
 
 //select a random button ID from 1 to 4 and push it to the computerChoice array
