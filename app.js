@@ -18,17 +18,11 @@ const audio = {
     audio4: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
 }
 
-//turn on pointer events for the game buttons
-const pointerEventsOn = () => {
+//turn on/off pointer events for the game buttons
+const pointerEvents = () => {
     buttonNodeList.forEach(btn => {
-        btn.style.pointerEvents = "auto";
-    });
-}
-
-//turn off pointer events for the game buttons
-const pointerEventsOff = () => {
-    buttonNodeList.forEach(btn => {
-        btn.style.pointerEvents = "none";
+        btn.style.pointerEvents ? btn.style.pointerEvents = "none" 
+        : btn.style.pointerEvents = "auto";
     });
 }
 
@@ -81,7 +75,7 @@ start.addEventListener('click', (e) => {
     //initiate computer choice sequence
     computerSelect();
     buttonTrigger(computerChoice[0]);
-    pointerEventsOn();
+    pointerEvents();
 });
 
 //Show computer's moves so far after player has finished their sequence
@@ -104,7 +98,7 @@ const checkIfMatch = () => {
         alert("game Over!");
         counter = 0;
         document.querySelector("#turn-counter").innerHTML = counter;
-        pointerEventsOff();
+        pointerEvents();
     } else if (playerChoice.length === computerChoice.length) {
         //otherwise the computer selects a new move and the game continues
         computerSelect();
