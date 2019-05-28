@@ -1,0 +1,59 @@
+body {
+  background-color: #fff;
+}
+
+.container{
+  width: 420px;
+  margin: 0 auto;
+}
+
+.quarter{
+  width: 200px;
+  height:200px;
+  float:left;
+}
+
+.one{
+  background-color: #07892E;
+  border-radius: 40% 0 0 0;
+  margin: 0 10px 0 0;
+  box-shadow: 2px 2px 5px black;
+  pointer-events: none;
+}
+
+.two{
+  background-color: #D10A11;
+  border-radius: 0 40% 0 0;
+  box-shadow: 2px 2px 5px black;
+  pointer-events: none;
+}
+
+.three{
+  background-color: #e6c300;
+  border-radius: 0 0 0 40%;
+  margin: 10px 10px 0 0;
+  box-shadow: 2px 2px 5px black;
+  pointer-events: none;
+}
+
+.four{
+  background-color: #081ABA;
+  border-radius: 0 0 40% 0;
+  margin: 10px 0 0 0;
+  box-shadow: 2px 2px 5px black;
+  pointer-events: none;
+}
+
+.opacity {
+  opacity: 0.8;
+  box-shadow: 0 0 0;
+}
+
+.modal {
+  display: none;
+  height: 200px;
+  width: 300px;
+  background-color: white;
+  position: fixed;
+  z-index: 2;
+}
