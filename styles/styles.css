@@ -7,11 +7,15 @@ body {
   margin: 0 auto;
 }
 
+#strict {
+    background-color: red;
+}
+
 .quarter{
   width: 200px;
   height:200px;
   float:left;
-  pointer-events: none;
+  /*pointer-events: none;*/
 }
 
 .one{

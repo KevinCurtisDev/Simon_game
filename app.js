@@ -5,18 +5,34 @@ let computerChoice = [];
 let playerChoice = [];
 const buttonNodeList = document.querySelectorAll(".quarter");
 const start = document.getElementById("start");
+const strictBtn = document.getElementById("strict");
 const green = document.getElementById("1");
 const red = document.getElementById("2");
 const yellow = document.getElementById("3");
 const blue = document.getElementById("4");
 
-//turn on/off pointer events for the game buttons
-const pointerEvents = () => {
-    buttonNodeList.forEach(btn => {
-        btn.style.pointerEvents ? btn.style.pointerEvents = "none" 
-        : btn.style.pointerEvents = "auto";
-    });
+const mode = {
+    strict: false,
 }
+
+strictBtn.addEventListener("click", () => {
+    if (mode.strict) {
+        mode.strict = false;
+        strictBtn.style.backgroundColor = "red";
+    } else {
+        mode.strict = true;
+        strictBtn.style.backgroundColor = "green";
+    }
+    console.log(mode.strict);
+});
+
+// //turn on/off pointer events for the game buttons
+// const pointerEvents = () => {
+//     buttonNodeList.forEach(btn => {
+//         btn.style.pointerEvents ? btn.style.pointerEvents = "none" 
+//         : btn.style.pointerEvents = "auto";
+//     });
+// }
 
 const clickButton = num => {
     //push the button to the player's choice array
@@ -64,7 +80,6 @@ start.addEventListener('click', () => {
     //initiate computer choice sequence
     computerSelect();
     buttonTrigger(computerChoice[0]);
-    pointerEvents();
 });
 
 //Show computer's moves so far after player has finished their sequence
@@ -82,12 +97,11 @@ const showMoves = () => {
 
 //Compare player's moves array with the computer's moves array
 const checkIfMatch = () => {
-    if (playerChoice[playerChoice.length - 1] !== computerChoice[playerChoice.length - 1]) {
+    if (playerChoice[playerChoice.length - 1] !== computerChoice[playerChoice.length - 1] && mode.strict === true) {
         //game over and reset game if the user makes a mistake when repeating the patern
         alert("game Over!");
         counter = 0;
         document.querySelector("#turn-counter").innerHTML = counter;
-        pointerEvents();
     } else if (playerChoice.length === computerChoice.length) {
         //otherwise the computer selects a new move and the game continues
         computerSelect();
