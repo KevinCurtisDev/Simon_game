@@ -10,14 +10,6 @@ const red = document.getElementById("2");
 const yellow = document.getElementById("3");
 const blue = document.getElementById("4");
 
-//audio object containing audio clips from freecodecamp sound samples
-const audio = {
-    audio1: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
-    audio2: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
-    audio3: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
-    audio4: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3')
-}
-
 //turn on/off pointer events for the game buttons
 const pointerEvents = () => {
     buttonNodeList.forEach(btn => {
@@ -26,9 +18,12 @@ const pointerEvents = () => {
     });
 }
 
-const clickButton = (num) => {
+const clickButton = num => {
+    //push the button to the player's choice array
     playerChoice.push(num);
+    //trigger the click event on the button
     buttonTrigger(num);
+    //check if the player's sequence matches the computer's sequence
     checkIfMatch();
 }
 
@@ -47,17 +42,11 @@ const computerSelect = () => {
 }
 
 //trigger a button to play an associated sound and to lighten in color momentarily
-const buttonTrigger = (choice) => {
+const buttonTrigger = choice => {
     document.getElementById(choice).classList.add("opacity");
-    if (choice === 0) {
-        audio.audio1.play();
-    } else if (choice === 1) {
-        audio.audio2.play();
-    } else if (choice === 2) {
-        audio.audio3.play();
-    } else {
-        audio.audio4.play();
-    }
+    //audio clips from freecodecamp sound samples
+    const track = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${choice}.mp3`);
+    track.play();
 
     setTimeout(() => {
         document.getElementById(choice).classList.remove("opacity");
@@ -65,7 +54,7 @@ const buttonTrigger = (choice) => {
 }
 
 //reset player and computer moves, then initiate a new computer move to start the game
-start.addEventListener('click', (e) => {
+start.addEventListener('click', () => {
     //reset counter to 0
     counter = 0;
     //empty player's choice array
