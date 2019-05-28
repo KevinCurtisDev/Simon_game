@@ -11,6 +11,7 @@ body {
   width: 200px;
   height:200px;
   float:left;
+  pointer-events: none;
 }
 
 .one{
@@ -18,14 +19,12 @@ body {
   border-radius: 40% 0 0 0;
   margin: 0 10px 0 0;
   box-shadow: 2px 2px 5px black;
-  pointer-events: none;
 }
 
 .two{
   background-color: #D10A11;
   border-radius: 0 40% 0 0;
   box-shadow: 2px 2px 5px black;
-  pointer-events: none;
 }
 
 .three{
@@ -33,7 +32,6 @@ body {
   border-radius: 0 0 0 40%;
   margin: 10px 10px 0 0;
   box-shadow: 2px 2px 5px black;
-  pointer-events: none;
 }
 
 .four{
@@ -41,7 +39,6 @@ body {
   border-radius: 0 0 40% 0;
   margin: 10px 0 0 0;
   box-shadow: 2px 2px 5px black;
-  pointer-events: none;
 }
 
 .opacity {

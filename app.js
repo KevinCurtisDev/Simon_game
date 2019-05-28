@@ -3,7 +3,12 @@ let counter = 0;
 let clickCounter = 0;
 let computerChoice = [];
 let playerChoice = [];
+const buttonNodeList = document.querySelectorAll(".quarter");
 const start = document.getElementById("start");
+const green = document.getElementById("1");
+const red = document.getElementById("2");
+const yellow = document.getElementById("3");
+const blue = document.getElementById("4");
 
 //audio object containing audio clips from freecodecamp sound samples
 const audio = {
@@ -15,18 +20,16 @@ const audio = {
 
 //turn on pointer events for the game buttons
 const pointerEventsOn = () => {
-    green.style.pointerEvents = "auto";
-    red.style.pointerEvents = "auto";
-    yellow.style.pointerEvents = "auto";
-    blue.style.pointerEvents = "auto";
+    buttonNodeList.forEach(btn => {
+        btn.style.pointerEvents = "auto";
+    });
 }
 
 //turn off pointer events for the game buttons
 const pointerEventsOff = () => {
-    green.style.pointerEvents = "none";
-    red.style.pointerEvents = "none";
-    yellow.style.pointerEvents = "none";
-    blue.style.pointerEvents = "none";
+    buttonNodeList.forEach(btn => {
+        btn.style.pointerEvents = "none";
+    });
 }
 
 const clickButton = (num) => {
@@ -35,25 +38,13 @@ const clickButton = (num) => {
     checkIfMatch();
 }
 
-const green = document.getElementById("1");
-green.addEventListener("click", () => {
-    clickButton(1)
-});
+green.addEventListener("click", () => { clickButton(1) });
 
-const red = document.getElementById("2");
-red.addEventListener("click", () => {
-    clickButton(2)
-});
+red.addEventListener("click", () => { clickButton(2) });
 
-const yellow = document.getElementById("3");
-yellow.addEventListener("click", () => {
-    clickButton(3)
-});
+yellow.addEventListener("click", () => { clickButton(3) });
 
-const blue = document.getElementById("4");
-blue.addEventListener("click", () => {
-    clickButton(4)
-});
+blue.addEventListener("click", () => { clickButton(4) });
 
 //select a random button ID from 1 to 4 and push it to the computerChoice array
 const computerSelect = () => {
