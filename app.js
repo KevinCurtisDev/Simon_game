@@ -97,19 +97,43 @@ const showMoves = () => {
     }, 700)
 }
 
+const wrongMove = () => {
+    green.classList.add("opacity");
+    red.classList.add("opacity");
+    blue.classList.add("opacity");
+    yellow.classList.add("opacity");
+    turnCounter.innerHTML = "!!";
+    buttonNodeList.forEach(btn => { btn.style.pointerEvents = "none" });
+    setTimeout(() => {
+        green.classList.remove("opacity");
+        red.classList.remove("opacity");
+        blue.classList.remove("opacity");
+        yellow.classList.remove("opacity");
+        turnCounter.innerHTML = counter;
+        buttonNodeList.forEach(btn => { btn.style.pointerEvents = "auto" });
+    }, 500);
+}
+
 
 //Compare player's moves array with the computer's moves array
 const checkIfMatch = () => {
     if (playerChoice[playerChoice.length - 1] !== computerChoice[playerChoice.length - 1] && game.strict) {
-        //game over and reset game if the user makes a mistake when repeating the patern
-        alert("game Over!");
+        //game over and reset game if the user makes a mistake when repeating the pattern
+        setTimeout(() => {
+            wrongMove();
+        }, 700);
         counter = 0;
+        start.innerHTML = "Start";
         turnCounter.innerHTML = counter;
     } else if (playerChoice[playerChoice.length - 1] !== computerChoice[playerChoice.length - 1] && !game.strict) {
         //show the sequence again without incrementing
         setTimeout(() => {
+            wrongMove();
+        }, 700);
+
+        setTimeout(() => {
             showMoves();
-        }, 500);
+        }, 800);
         turnCounter.innerHTML = counter;
     } else if (playerChoice.length === computerChoice.length) {
         //otherwise the computer selects a new move and the game continues

@@ -16,7 +16,8 @@ body {
     z-index: 5;
     margin-left: calc(50% - 120px);
     margin-top: 100px;
-    background-color: white;
+    background-color: rgb(235, 231, 231);
+    box-shadow: 1px 1px 10px rgb(99, 97, 97);
     padding: 70px;
 }
 
