@@ -10,10 +10,14 @@ const green = document.getElementById("1");
 const red = document.getElementById("2");
 const yellow = document.getElementById("3");
 const blue = document.getElementById("4");
+const lives = document.getElementById("lives");
 
 const game = {
-    strict: false
+    strict: false,
+    lives: 3
 }
+
+lives.innerHTML = "❤️❤️❤️";
 
 strictBtn.addEventListener("click", () => {
     if (game.strict) {
@@ -63,6 +67,7 @@ const buttonTrigger = choice => {
     }, 200);
 }
 
+
 //reset player and computer moves, then initiate a new computer move to start the game
 start.addEventListener('click', () => {
     //reset counter to 0
@@ -71,13 +76,19 @@ start.addEventListener('click', () => {
     playerChoice = [];
     //empty computer's choice array
     computerChoice = [];
+    //set lives to 3
+    game.lives = 3;
+    lives.innerHTML = "❤️❤️❤️";
     turnCounter.innerHTML = counter;
+    wrongMove();
     //Change start button to reset button once game begins
     start.innerHTML = "Reset..";
     buttonNodeList.forEach(btn => {btn.style.pointerEvents = "auto"});
     //initiate computer choice sequence
     computerSelect();
-    buttonTrigger(computerChoice[0]);
+    setTimeout(()=> {
+        buttonTrigger(computerChoice[0]);
+    }, 1000);
 });
 
 //Show computer's moves so far after player has finished their sequence
@@ -94,7 +105,7 @@ const showMoves = () => {
             //turn on pointer events for the game buttons when computer's choice ends
             buttonNodeList.forEach(btn => {btn.style.pointerEvents = "auto"});
         }
-    }, 700)
+    }, 400)
 }
 
 const wrongMove = () => {
@@ -122,6 +133,19 @@ const checkIfMatch = () => {
         setTimeout(() => {
             wrongMove();
         }, 700);
+
+        game.lives--;
+        if (game.lives === 2) {
+            lives.innerHTML = "❤️❤️";
+        } else if (game.lives === 1) {
+            lives.innerHTML = "❤️";
+        } else if (game.lives === 0) {
+            lives.innerHTML = " ";
+        }
+        
+        if (game.lives < 1) {
+            alert("game over!")
+        }
         counter = 0;
         start.innerHTML = "Start";
         turnCounter.innerHTML = counter;
@@ -133,7 +157,18 @@ const checkIfMatch = () => {
 
         setTimeout(() => {
             showMoves();
-        }, 800);
+        }, 1000);
+        game.lives--;
+        if (game.lives === 2) {
+            lives.innerHTML = "❤️❤️";
+        } else if (game.lives === 1) {
+            lives.innerHTML = "❤️";
+        } else if (game.lives === 0) {
+            lives.innerHTML = " ";
+        }
+        if (game.lives < 1) {
+            alert("game over!")
+        }
         turnCounter.innerHTML = counter;
     } else if (playerChoice.length === computerChoice.length) {
         //otherwise the computer selects a new move and the game continues
