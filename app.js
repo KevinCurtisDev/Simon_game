@@ -25,6 +25,7 @@ const game = {
 
 //player starts with three lives
 lives.innerHTML = "❤️❤️❤️";
+highSoreCount.innerHTML = localStorage.getItem('score');
 
 //sets game to strict/hard or non strict/easy
 strictBtn.addEventListener("click", () => {
@@ -218,12 +219,13 @@ const checkIfMatch = () => {
         }, 500);
         counter++;
         turnCounter.innerHTML = counter;
-        if(counter > highScore[highScore.length-1]) {
+        
+
+        if (counter > localStorage.getItem('score')) {
             highScore.push(counter);
             localStorage.setItem('score', counter);
+            highSoreCount.innerHTML = localStorage.getItem('score');
         }
-
-        highSoreCount.innerHTML = localStorage.getItem('score');
     }
 }
 
@@ -248,6 +250,5 @@ document.getElementById("modal-button").addEventListener('click', () => {
     start.style.backgroundColor = "rgb(69, 158, 69)"
 });
 
-highSoreCount.innerHTML = localStorage.getItem('score');
 
 
