@@ -16,6 +16,7 @@ const lives = document.getElementById("lives");
 const modalBtn = document.getElementById('model__content-button');
 const modal = document.getElementById('modal');
 
+
 const game = {
     strict: false,
     reset: true,
@@ -219,9 +220,10 @@ const checkIfMatch = () => {
         turnCounter.innerHTML = counter;
         if(counter > highScore[highScore.length-1]) {
             highScore.push(counter);
+            localStorage.setItem('score', counter);
         }
-        highSoreCount.innerHTML = highScore[highScore.length - 1];
-        console.log(highScore);
+
+        highSoreCount.innerHTML = localStorage.getItem('score');
     }
 }
 
@@ -246,5 +248,6 @@ document.getElementById("modal-button").addEventListener('click', () => {
     start.style.backgroundColor = "rgb(69, 158, 69)"
 });
 
+highSoreCount.innerHTML = localStorage.getItem('score');
 
 
