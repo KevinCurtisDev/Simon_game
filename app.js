@@ -16,6 +16,7 @@ const modal = document.getElementById('modal');
 
 const game = {
     strict: false,
+    reset: true,
     lives: 3
 }
 
@@ -74,25 +75,43 @@ const buttonTrigger = choice => {
 
 //reset player and computer moves, then initiate a new computer move to start the game
 start.addEventListener('click', () => {
-    //reset counter to 0
-    counter = 0;
-    //empty player's choice array
-    playerChoice = [];
-    //empty computer's choice array
-    computerChoice = [];
-    //set lives to 3
-    game.lives = 3;
-    lives.innerHTML = "❤️❤️❤️";
-    turnCounter.innerHTML = counter;
-    wrongMove();
-    //Change start button to reset button once game begins
-    start.innerHTML = "Reset..";
-    buttonNodeList.forEach(btn => {btn.style.pointerEvents = "auto"});
-    //initiate computer choice sequence
-    computerSelect();
-    setTimeout(()=> {
-        buttonTrigger(computerChoice[0]);
-    }, 1000);
+    game.reset ? game.reset = false : game.reset = true;
+    if (!game.reset) {
+        //reset counter to 0
+        counter = 0;
+        //empty player's choice array
+        playerChoice = [];
+        //empty computer's choice array
+        computerChoice = [];
+        //set lives to 3
+        game.lives = 3;
+        lives.innerHTML = "❤️❤️❤️";
+        turnCounter.innerHTML = counter;
+        //Change start button to reset button once game begins
+        start.innerHTML = "Reset..";
+        start.style.backgroundColor = "orange"
+        buttonNodeList.forEach(btn => { btn.style.pointerEvents = "auto" });
+        //initiate computer choice sequence
+        computerSelect();
+        setTimeout(() => {
+            buttonTrigger(computerChoice[0]);
+        }, 1000);
+    } else {
+        //reset counter to 0
+        counter = 0;
+        //empty player's choice array
+        playerChoice = [];
+        //empty computer's choice array
+        computerChoice = [];
+        //set lives to 3
+        game.lives = 3;
+        lives.innerHTML = "❤️❤️❤️";
+        turnCounter.innerHTML = counter;
+        wrongMove();
+        //Change start button to reset button once game begins
+        start.innerHTML = "Start";
+        start.style.backgroundColor = "rgb(69, 158, 69)"
+    }
 });
 
 //Show computer's moves so far after player has finished their sequence
@@ -206,4 +225,15 @@ modalBtn.addEventListener('click', () => {
 
 document.getElementById("modal-button").addEventListener('click', () => {
     modal.style.display = "none";
+    //reset counter to 0
+    counter = 0;
+    //empty player's choice array
+    playerChoice = [];
+    //empty computer's choice array
+    computerChoice = [];
+    //set lives to 3
+    game.lives = 3;
+    lives.innerHTML = "❤️❤️❤️";
+    turnCounter.innerHTML = counter;
+    start.innerHTML = "Start";
 });
