@@ -8,12 +8,32 @@ This project, the second of the code institute bootcamp projects, is a memory ga
 I took a simple approach to building this project, keeping it as close to the original game as possible while adapting the layout and interactive features to modern devices.
 
 
+- [Simon Game](#simon-game)
+  * [UX](#ux)
+    + [User stories:](#user-stories-)
+      - [Child:](#child-)
+      - [Gamer:](#gamer-)
+      - [Nostalgic 80's lover of all things retro:](#nostalgic-80-s-lover-of-all-things-retro-)
+    + [Features](#features)
+  * [Technologies Used](#technologies-used)
+  * [Testing](#testing)
+  * [Deployment](#deployment)
+    + [Live deployment](#live-deployment)
+    + [Local version](#local-version)
+  * [Difficulties](#difficulties)
+  * [Further Enhancements](#further-enhancements)
+  * [Credits](#credits)
+  * [Media](#media)
+  * [Acknowledgements](#acknowledgements)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## UX
 
 The Simon Game is primarily aimed at people looking to challenge their short term memory capacity, kids trying to beat their and their friend's high score, adults who want to relive the nastalgia of the 70's and 80's. My design choice was inspired by the simplicity of the original game, and as such, I have kept the UI as basic as possible, while trying my best not to take away from usability.
 
-While planning the the design of the game, and imortant consideration was layout for various devices and screen size, making sure to use white space strategically on large screens and being careful not to clutter smaller screen sizes with UI elements.
+While planning the the design of the game, nd important consideration was layout for various devices and screen size, making sure to use white space strategically on large screens and being careful not to clutter smaller screen sizes with UI elements.
 
 The following questions were asked:
 
