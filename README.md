@@ -1,104 +1,66 @@
 # Simon Game
 
-![responsive layout of web app](https://github.com/The-masta-blasta/Simon_game/blob/master/app/assets/images/responsive-design.png)
+![Simon game image](https://github.com/The-masta-blasta/Simon_game/blob/master/assets/images/simonImg.png)
 
 
-This project, the first of the code institute bootcamp projects, is a progressive web app that I've built for Irish poet, Jessica Traynor – to showcase her latest Poetry, Book releases, videos, and blog posts. The web app has been optimised for performance, accessibility and offline access.
+This project, the second of the code institute bootcamp projects, is a memory game based on the classic 1978 released electronic Simon Game, where the game plays a sequence of lights and sounds and the player has to repeeate the sequence. Each time the player repeats the sequence correctly he/she moves onto the next level, which becomes increasingly more difficult as the sequence gets longer.
+
+I took a simple approach to building this project, keeping it as close to the original game as possible while adapting the layout and interactive features to modern devices.
 
 
 
 ## UX
 
+The Simon Game is primarily aimed at people looking to challenge their short term memory capacity, kids trying to beat their and their friend's high score, adults who want to relive the nastalgia of the 70's and 80's. My design choice was inspired by the simplicity of the original game, and as such, I have kept the UI as basic as possible, while trying my best not to take away from usability.
 
-I used the five levels of design (Jesse James Garrett) in my approach to user experience, building the UI from the strategy plan through to the surface plan.
-
+While planning the the design of the game, and imortant consideration was layout for various devices and screen size, making sure to use white space strategically on large screens and being careful not to clutter smaller screen sizes with UI elements.
 
 The following questions were asked:
 
-
-* Who is this website for?
-* What it is that the users want to achieve?
+* Who will use this game/web app?
+* What is the user's goal(s)?
+* What functionality/features should be included/excluded?
 * How does this project address the above questions?
-
-
-The site is primarily for readers, potential purchasers, and arts administrators/festival organisers. The intention of the users is to buy books, contact the author for work opportunities, and to get information on the author's workshops and upcoming events.
 
 
 ### User stories:
 
 
-The following user stories were used -
+The following user stories were used in building the game -
 
-#### Reader:
+#### Child:
 
-As a reader, I want to see a list of books, blogs and current works written by Jessica, so that I can buy her books and read her latest writings and thoughts.
+As a child, I want to see the high score and start playing the game as quickly as possible, while checking my current score against the high score I'm trying to beat.
 
 Actions:
 
-* Navigate to the home page. 
-* Scroll to the information on Jessica's latest book release. 
-* Click on the button to see more books. 
-* Decide to buy a book or not. 
-* Click buy this book. A new tab opens in my browser showing the publisher's order form for the book. 
-* Complete order and decide to look for more of Jessica's work. 
-* Click the expandible menu and navigate to the Poetry section of Jessica's web app. 
-* Read some poems and save the page in the browser history for later reading.
 
-#### Arts administrator:
+#### Gamer:
 
-As an Arts administrator, I want to get in touch with Jessica so that I can discuss work opportunities with her.
+As a Gamer, I want to..
 
 Actions: 
 
-* Open the web app home page. 
-* Scroll to the contact form. 
-* Fill out the contact form with incorrect details (see error messages). 
-* Repeat the process of filling in the contact form with correct details. 
-* Click the send message button. No errors appear.
+#### Nostalgic 80's lover of all things retro:
 
-#### Festival organiser:
-
-As a festival organiser, I want to view Jessica's work and get in touch with her so that I can discuss possible work opportunities with her.
 
 
 Action: 
 
-* Open the web app home page. 
-* Scroll to the information on Jessica's latest book release. 
-* Click on the button to see more books. 
-* Click the expandible menu and navigate to the Poetry section. 
-* Browse some of the poems.
-* Open the expandable menu and navigate to the contact page.
-* Fill out the contact form with incorrect details and see error messages. 
-* Repeat the process of filling in the contact form with correct details.
-* Click the send message button. No errors appear.
 
-
-View wireframes: [wireframes](https://the-masta-blasta.github.io/Jessica_webapp/app/Jess-Wireframe.pdf) 
+View wireframes: [wireframes]() 
 
 
 ### Features
 
+* Local storage: The game takes advantage of local storage in order to persist the latest high score value.
 
-Progressive web app: I have used a service worker to cache assets, and to prompt the user to download the site as a web app to their device's home screen. This effectively allows the user to open and use the web app even when their device is offline. The included manifest.json file also assists in mobile functionality- allowing the web app to launch and display like a native app.
+* Visuals and sound effects: In order to provide feedback to the user, the game implements audio and visual cues to indicate when the user has pressed a button, and to indicate whether they have succeeded or failed in repeating the pattern.
 
+* Display: The game displays the user's current lives as heart images, the high score, and the player's current score/level.
 
-Accessibility: The site has been optimised for accessibility – using semantic HTML and aria roles and labels where appropriate.
+* Game settings: The user has the option to set a game level to hard or easy with a toggle button. The user can also start or reset a game using the start/reset button. The start/reset button is initially in the start state and once a game begins it sitches to the reset state.
 
-
-Navigation: Navigation for the site is through a hamburger menu that, on tapping/clicking, expands to cover the entire screen. The visual effects and the menu state were achieved entirely through css, using the css “checkbox hack.” For accessibility I have included a hidden element allowing screen readers to skip to the main content of the page.
-
-
-Site header: The site header takes advantage of white space to draw the user's attention to the center of the page where Jess's name and a number of social Icons are displayed, with an image of a bird (from the cover of Jess's latest book) slightly in the background. The header takes up 70% of the screen, leaving a visual que to scroll down to the welcome section, which offers a brief introduction to the site.
-
-
-Video: Users can view the video (embedded from youtube) that loads on the index.html page. They can also opt to view additional videos by clicking the button below the currently displayed video. Clicking this button links the user to a dedicated video page.
-
-
-Books: There is one book listed on the main page of the site (this is the book that is currently being launched). Users can view other books by Jessica by clicking the see more books button.
-
-
-Contact: The contact form is placed at the bottom of the page. It promts the user to get in touch via a simple form asking for your name, email address, and message. Aria labels are included in the form for accessibility purposes.
 
 
 
@@ -111,10 +73,7 @@ HTML5 – Semantic html was used throughout the site, with a strong emphasis pla
 Post CSS – Post CSS was used in order to make the css more organised and manageable. Flexbox was implemented to achieve the sites responsive design.
 
 
-Normalize.css was used to implement a css reset.
-
-
-Javascript (es2015) – javascript was used to implement the service worker script in order to allow site functionality when the user is offline.
+Javascript (es2015) – javascript was used to implement the game logic and interactive features including sounds, visuals and dynamic feedback of lives, level, high score and difficulty setting.
 
 
 Gulp was used as the project task runner, to compress, organise and compile the final distribution of the web app.
@@ -140,18 +99,26 @@ Native app experience: Tested on iphone 5s, iphone 8, sony xperia, samsung 8. Th
 
 ## Deployment
 
+### Live deployment
 
-This site has been deployed on GitHub pages and can be viewed here: [live preview of project](https://the-masta-blasta.github.io/Jessica_webapp/) 
+This site has been deployed on GitHub pages and can be viewed here: [live preview of project]() 
+
+### Local version
+
+To run the Simon game on your local machine you should do the following:
+
+* Navigate to the github repo here: [repo](https://github.com/The-masta-blasta/Simon_game)
+* Click the download button at the top right of the screen.
+* Alternatively navigate into a folder (using the command line) you wish to clone the game to on your machine and run the following git command: git clone https://github.com/The-masta-blasta/Simon_game
+* once you have the repo on your machine, from the command line cd into the project folder
+* make sure you have python3 installed on your machine and run th efollowing command: python3 -m http.server
+* To see the game visit the local host address generated by the python server.
 
 ## Difficulties
 
-The most challenging area in building this web app was striking a good balance between design and following what Jessica (the poet the site is designed for) wanted to display. An other challenging area was cache management when using the service worker. This is an area of the site that still needs improvement.
 
 ## Further Enhancements
 
-I would like to continue to make the web app offline friendly by integrating indexBD into the contact form, allowing users to send a message offline and later have the message delivered when their device connects to the internet.
-
-The site's load time would benefit further by inlining css for above the fold content in order to mitigate the render blocking styles during the critocal rendering path.
 
 ## Credits
 
@@ -161,12 +128,8 @@ All content was supplied by Jessica Traynor
 ## Media
 
 
-Art work supplied by Denise Nestor. Photos used in this project were obtained from Jessica Traynor and dedalus press with permission.
+Sound files used for the buttons were sourced from [https://s3.amazonaws.com/freecodecamp/](https://s3.amazonaws.com/freecodecamp/)
 
 
 ## Acknowledgements
 
-
-I based the hamburger navigation on the navigation menu used by Jonas Schmedtmann - Advanced CSS and Sass course on Udemy. 
-
-The script used to defer embedded videos is from [varvy.com](https://varvy.com/pagespeed/defer-videos.html), written by Patrick Sexton
