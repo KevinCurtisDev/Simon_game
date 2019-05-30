@@ -2,13 +2,8 @@
 
 ![Simon game image](https://github.com/The-masta-blasta/Simon_game/blob/master/assets/images/simonImg.png)
 
-
-This project, the second of the code institute bootcamp projects, is a memory game based on the classic 1978 released electronic Simon Game, where the game plays a sequence of lights and sounds and the player has to repeeate the sequence. Each time the player repeats the sequence correctly he/she moves onto the next level, which becomes increasingly more difficult as the sequence gets longer.
-
-I took a simple approach to building this project, keeping it as close to the original game as possible while adapting the layout and interactive features to modern devices.
-
-
 - [Simon Game](#simon-game)
+  * [Project summary](#Project-summary)
   * [UX](#ux)
     + [User stories:](#user-stories-)
       - [Child:](#child-)
@@ -28,6 +23,11 @@ I took a simple approach to building this project, keeping it as close to the or
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+## Project summary
+
+This project, the second of the code institute bootcamp projects, is a memory game based on the classic 1978 released electronic Simon Game, where the game plays a sequence of lights and sounds and the player has to repeeate the sequence. Each time the player repeats the sequence correctly he/she moves onto the next level, which becomes increasingly more difficult as the sequence gets longer.
+
+I took a simple approach to building this project, keeping it as close to the original game as possible while adapting the layout and interactive features to modern devices.
 
 ## UX
 
