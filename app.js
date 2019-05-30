@@ -11,14 +11,18 @@ const red = document.getElementById("2");
 const yellow = document.getElementById("3");
 const blue = document.getElementById("4");
 const lives = document.getElementById("lives");
+const modalBtn = document.getElementById('model__content-button');
+const modal = document.getElementById('modal');
 
 const game = {
     strict: false,
     lives: 3
 }
 
+//player starts with three lives
 lives.innerHTML = "❤️❤️❤️";
 
+//sets game to strict/hard or non strict/easy
 strictBtn.addEventListener("click", () => {
     if (game.strict) {
         game.strict = false;
@@ -108,6 +112,7 @@ const showMoves = () => {
     }, 400)
 }
 
+//make all lights flash and set turn counter to !! momentarily
 const wrongMove = () => {
     green.classList.add("opacity");
     red.classList.add("opacity");
@@ -134,41 +139,54 @@ const checkIfMatch = () => {
             wrongMove();
         }, 700);
 
+        counter = 0;
+        turnCounter.innerHTML = counter;
+        computerChoice = [];
+
         game.lives--;
         if (game.lives === 2) {
             lives.innerHTML = "❤️❤️";
+            computerSelect();
+            setTimeout(() => {
+                showMoves();
+            }, 1300);
         } else if (game.lives === 1) {
             lives.innerHTML = "❤️";
+            computerSelect();
+            setTimeout(() => {
+                showMoves();
+            }, 1300);
         } else if (game.lives === 0) {
             lives.innerHTML = " ";
+            document.getElementById('modal__content').style.display = "none";
+            document.getElementById('gameover').style.display = "block";
+            modal.style.display = "block";
         }
-        
-        if (game.lives < 1) {
-            alert("game over!")
-        }
-        counter = 0;
-        start.innerHTML = "Start";
-        turnCounter.innerHTML = counter;
+
     } else if (playerChoice[playerChoice.length - 1] !== computerChoice[playerChoice.length - 1] && !game.strict) {
         //show the sequence again without incrementing
         setTimeout(() => {
             wrongMove();
         }, 700);
 
-        setTimeout(() => {
-            showMoves();
-        }, 1000);
         game.lives--;
         if (game.lives === 2) {
             lives.innerHTML = "❤️❤️";
+            setTimeout(() => {
+                showMoves();
+            }, 1000);
         } else if (game.lives === 1) {
             lives.innerHTML = "❤️";
+            setTimeout(() => {
+                showMoves();
+            }, 1000);
         } else if (game.lives === 0) {
             lives.innerHTML = " ";
+            document.getElementById('modal__content').style.display = "none";
+            document.getElementById('gameover').style.display = "block";                   
+            modal.style.display = "block";
         }
-        if (game.lives < 1) {
-            alert("game over!")
-        }
+
         turnCounter.innerHTML = counter;
     } else if (playerChoice.length === computerChoice.length) {
         //otherwise the computer selects a new move and the game continues
@@ -180,3 +198,12 @@ const checkIfMatch = () => {
         turnCounter.innerHTML = counter;
     }
 }
+
+//modal control
+modalBtn.addEventListener('click', () => {
+    modal.style.display = "none";
+});
+
+document.getElementById("modal-button").addEventListener('click', () => {
+    modal.style.display = "none";
+});

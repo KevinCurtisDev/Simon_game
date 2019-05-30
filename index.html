@@ -7,8 +7,8 @@
     <title>Simon Game</title>
 </head>
 <body>
-    <div>
-        <h2>Lives: <span id="lives">❤️❤️❤️</span></h2>
+    <div class="lives">
+        <h2>Lives: <span id="lives">❤️ ❤️ ❤️</span></h2>
     </div>
     <div class="controls">
         <button id="start">Start</button>
@@ -22,6 +22,39 @@
         <div id="3" class="quarter three"></div>
         <div id="4" class="quarter four"></div>
     </div>
+
+    <div class="modal" id="modal">
+        <div id="gameover">
+            <h2 class='modal-gameover'>Game Over</h2>
+            <button id='modal-button' class='model-button'>Play again</button>
+        </div>
+        
+        <div class="modal__content" id="modal__content">
+            <div>
+                <h3>Game Rules</h3>
+                <p>
+                    <strong>Aim of the game:</strong> The game will play a sequence of button clicks.
+                    Level one is one button click, level two is two button click, and so on.
+                    After the game plays a sequence, you must repeate the sequence in the exact
+                    same order. This will bring you to the next level, where the sequence will
+                    repeate itself and increment itself by one.
+                </p>
+                <p>
+                    <strong>Game modes:</strong> Clicking the button that says easy will toggle the game mode between 
+                    strict/hard mode and non strict/easy mode. Strict mode will reset the game level to zero and deduct a 
+                    life each time you get the sequence wrong. Non strict/easy mode will deduct a life each time you 
+                    get the sequence wrong, but you will continue on from your current level.
+                </p>
+                <p>
+                   <strong>Lives:</strong> You start the game with three lives. each time
+                   you get the sequence wrong you lose a life. When your lives 
+                   reach zero the game ends.
+                </p>
+            </div>
+            <button id="model__content-button">Go to Game</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
