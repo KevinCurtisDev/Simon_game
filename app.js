@@ -2,6 +2,8 @@
 let counter = 0;
 let computerChoice = [];
 let playerChoice = [];
+let highScore = [0]
+const highSoreCount = document.getElementById("high-score");
 const buttonNodeList = document.querySelectorAll(".quarter");
 const start = document.getElementById("start");
 const strictBtn = document.getElementById("strict");
@@ -215,6 +217,11 @@ const checkIfMatch = () => {
         }, 500);
         counter++;
         turnCounter.innerHTML = counter;
+        if(counter > highScore[highScore.length-1]) {
+            highScore.push(counter);
+        }
+        highSoreCount.innerHTML = highScore[highScore.length - 1];
+        console.log(highScore);
     }
 }
 
@@ -236,4 +243,8 @@ document.getElementById("modal-button").addEventListener('click', () => {
     lives.innerHTML = "❤️❤️❤️";
     turnCounter.innerHTML = counter;
     start.innerHTML = "Start";
+    start.style.backgroundColor = "rgb(69, 158, 69)"
 });
+
+
+
