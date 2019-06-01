@@ -101,20 +101,24 @@ Gulp was used as the project task runner, to compress, organise and compile the 
 
 ## Testing
 
+### Manual testing
 
-Responsive design: responsive design was tested on google chrome webdeveloper tools. Once the site was uploaded to github pages it was also tested on a number of phones, tablets, laptop and desktop screens.
+Manual testing was carried out on the game with every code change. Areas tested were user interface, display, responsive design, browser caching and over all user experience.
 
+#### Display
 
-Browser compatibility: The site was run on multiple browsers, including chrome, chrome canary, firefox, IE, opera.
+* Initial screen display: Should show a modal with game instructions and a button to go to the game.
+  Tested on multiple screen sizes. All displays were as expected. Clicking the go to game button closed the modal as expected.
 
+* Initial game screen display (mobile): Should display lives(x3), high score(score), game settings buttons and current level/score at the top of the screen, and the rest of the screen should display the game buttons stacked one upon each other. 
 
-Progressive: The site was run through google chrome's lighthouse audit and scored full marks in all areas including, progressive, accessibility, SEO, performance.
+* Initial game screen display (large screens): Should display title(Simon Game) lives(x3), and high score(score) at the top of the screen. The game buttons should be displayed in a square pattern in the center of the screen with a control/settings panel in the middle, displaying , game settings buttons and current level/score.
 
+#### UI
 
-Offline capability: Tested on an iphone 5s, iphone 8, sony xperia, samsung 8, and multiple desktops, laptops and tablets. Any page visited while online remained available offline when the site was reloaded.
+* Clicking the start button: Should initialise a new game, indicated by all buttons lighting up and the current score setting to 0. It should then select a random game button and trigger its associated sound and light up effect. It should also toggle the start button to an orange reset button. Button behaved as expected.
 
-
-Native app experience: Tested on iphone 5s, iphone 8, sony xperia, samsung 8. The site downloaded with an app icon to each homescreen. The app launched with a splash screen displaying the app icon at the appropriate size. Once launched, the site displayed in the full size of the view window without the usual upper and lower browser bars. The top bar on each android device also changed to the colour theme set, this feature didn't work for iphone models.
+* Clicking the reset button: Should reset the current game and lives, indicated by all buttons lighting up and the current score setting to 0. It should also toggle the reset button to the original green start button state. Button behaved as expected.
 
 
 ## Deployment

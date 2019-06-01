@@ -1,21 +1,27 @@
 body {
   background-color: #fff;
+  text-align: center;
+}
+
+.score {
+  font-size: 1rem;
+  margin-top: -10px;
 }
 
 .container{
   width: 420px;
   max-width: 100%;
-  margin: 15% auto;
+  margin: 10% auto;
 }
 
 .controls {
     position: absolute;
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius: 30%;
     z-index: 5;
     margin-left: calc(50% - 120px);
-    margin-top: calc(15% + 70px);
+    margin-top: calc(11% + 70px);
     background-color: rgb(235, 231, 231);
     box-shadow: 1px 1px 10px rgb(99, 97, 97);
     padding: 70px;
@@ -66,7 +72,7 @@ body {
   background-color: #07892E;
   border-radius: 40% 0 0 0;
   margin: 0 10px 0 0;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 2px 2px 5px rgb(0, 0, 0);
 }
 
 .two{
@@ -124,6 +130,7 @@ body {
   padding: 40px;
   background-color: #fff;
   transform: translate(-50%, -50%);
+  text-align: left;
 }
 
 #model__content-button {
@@ -165,7 +172,7 @@ body {
 @media only screen and (max-width: 462px) {
     .quarter{
         width: 100%;
-        height: 19vh;
+        height: 16vh;
     }
 
     .one{
@@ -235,5 +242,9 @@ body {
         box-shadow: 1px 1px 1px black;
         cursor: pointer;
         margin: 0 5px 5px;
+    }
+
+    h1 {
+      display: none;
     }
 }
