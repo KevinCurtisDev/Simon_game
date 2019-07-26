@@ -55,19 +55,40 @@ The following user stories were used in building the game -
 As a child, I want to see the high score and start playing the game as quickly as possible, while checking my current score against the high score I'm trying to beat.
 
 Actions:
+* Go to game url
+* Select difficulty level
+* Click start
+* Watch and repeat pattern
 
+As a child, I want to reset the game and play again.
+
+Actions:
+* Click the reset button
+* Click the start button
+* Watch and repeat pattern
 
 #### Gamer:
 
-As a Gamer, I want to..
+As a Gamer, I want to play a new game.
 
 Actions: 
+* Go to game url
+* Select difficulty level
+* Click start
+* Watch and repeat pattern
 
-#### Nostalgic 80's lover of all things retro:
+As a Gamer, I want to restart the game.
 
+Actions: 
+* Click the reset button
 
+As a Gamer, I want to play select a new difficulty level and play again.
 
-Action: 
+Actions: 
+* Click the difficulty button to toggle the level of difficulty
+* Click the reset button
+* CLick the start button
+
 
 
 View wireframes: [wireframes]() 

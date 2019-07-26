@@ -16,7 +16,7 @@ const lives = document.getElementById("lives");
 const modalBtn = document.getElementById('model__content-button');
 const modal = document.getElementById('modal');
 
-
+//Create a game object
 const game = {
     strict: false,
     reset: true,
@@ -25,6 +25,8 @@ const game = {
 
 //player starts with three lives
 lives.innerHTML = "❤️❤️❤️";
+
+//Set the high score to high score saved in browser local storage
 highSoreCount.innerHTML = localStorage.getItem('score');
 
 //sets game to strict/hard or non strict/easy
@@ -50,13 +52,13 @@ const clickButton = num => {
     checkIfMatch();
 }
 
-green.addEventListener("click", () => { clickButton(1) });
+green.addEventListener("click", () => clickButton(1));
 
-red.addEventListener("click", () => { clickButton(2) });
+red.addEventListener("click", () => clickButton(2));
 
-yellow.addEventListener("click", () => { clickButton(3) });
+yellow.addEventListener("click", () => clickButton(3));
 
-blue.addEventListener("click", () => { clickButton(4) });
+blue.addEventListener("click", () => clickButton(4));
 
 //select a random button ID from 1 to 4 and push it to the computerChoice array
 const computerSelect = () => {
@@ -230,9 +232,7 @@ const checkIfMatch = () => {
 }
 
 //modal control
-modalBtn.addEventListener('click', () => {
-    modal.style.display = "none";
-});
+modalBtn.addEventListener('click', () => modal.style.display = "none");
 
 document.getElementById("modal-button").addEventListener('click', () => {
     modal.style.display = "none";
@@ -249,6 +249,3 @@ document.getElementById("modal-button").addEventListener('click', () => {
     start.innerHTML = "Start";
     start.style.backgroundColor = "rgb(69, 158, 69)"
 });
-
-
-
