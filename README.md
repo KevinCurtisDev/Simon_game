@@ -113,13 +113,11 @@ View wireframes: [wireframes]()
 HTML5 – Semantic html was used throughout the site, with a strong emphasis placed on accessibility (using aria and best practices).
 
 
-Post CSS – Post CSS was used in order to make the css more organised and manageable. Flexbox was implemented to achieve the sites responsive design.
+CSS3 – Flexbox was implemented to achieve the sites responsive design.
 
 
 Javascript (es2015) – javascript was used to implement the game logic and interactive features including sounds, visuals and dynamic feedback of lives, level, high score and difficulty setting.
 
-
-Gulp was used as the project task runner, to compress, organise and compile the final distribution of the web app.
 
 
 ## Testing
