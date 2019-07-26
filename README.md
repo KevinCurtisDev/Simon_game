@@ -137,11 +137,20 @@ Manual testing was carried out on the game with every code change. Areas tested 
 
 * Initial game screen display (large screens): Should display title(Simon Game) lives(x3), and high score(score) at the top of the screen. The game buttons should be displayed in a square pattern in the center of the screen with a control/settings panel in the middle, displaying , game settings buttons and current level/score.
 
+* High score: should remain at the current number value until the player achieves a higher score, at which point the high score will increment on each succesful round. High score number behaved as expected.
+
+* Current score: Should initially be set to 0. Should increment by one with each successful round. Score behaved as expected.
+
+* Game over: When the player loses all three lives, the game will end with a screen overlay message saying game over and giving the player an option to play again by clicking a play again button. The game will be reset. Game over functionality behaved as expected.
+
 #### UI
 
 * Clicking the start button: Should initialise a new game, indicated by all buttons lighting up and the current score setting to 0. It should then select a random game button and trigger its associated sound and light up effect. It should also toggle the start button to an orange reset button. Button behaved as expected.
 
 * Clicking the reset button: Should reset the current game and lives, indicated by all buttons lighting up and the current score setting to 0. It should also toggle the reset button to the original green start button state. Button behaved as expected.
+
+* Clicking individual 'light' buttons: Should make the clicked button light up momentarily while playing an associated sound. Following this the computer should play a repeated sequence which is incremented by one on each successive turn. CLicking the wrong button in the pattern will reset the pattern and score to zero (on difficult level) - the score will not be reset when playing level is set to easy - and the pattern will be shown again. One life (heart) will be subtracted. Buttons behaved as expected.
+
 
 
 ## Deployment
@@ -172,6 +181,48 @@ The two areas I strigled the most with on this project were:
 ## Further Enhancements
 
 I believe this project would benefit mostly by implementing some form of data persistence such as a service worker in order to keep track of the high score. Going a step further, if the application was connected to a data base, a leader board could be stored for multiple user od the game on different devices.
+
+
+## Code Sample
+
+```JavaScript
+
+const clickButton = num => {
+    //push the button to the player's choice array
+    playerChoice.push(num);
+    //trigger the click event on the button
+    buttonTrigger(num);
+    //check if the player's sequence matches the computer's sequence
+    checkIfMatch();
+}
+
+green.addEventListener("click", () => clickButton(1));
+
+red.addEventListener("click", () => clickButton(2));
+
+yellow.addEventListener("click", () => clickButton(3));
+
+blue.addEventListener("click", () => clickButton(4));
+
+//select a random button ID from 1 to 4 and push it to the computerChoice array
+const computerSelect = () => {
+    let choice = Math.floor(Math.random() * 4 + 1);
+    computerChoice.push(choice);
+}
+
+//trigger a button to play an associated sound and to lighten in color momentarily
+const buttonTrigger = choice => {
+    document.getElementById(choice).classList.add("opacity");
+    //audio clips from freecodecamp sound samples
+    const track = new Audio(`https://s3.amazonaws.com/freecodecamp/simonSound${choice}.mp3`);
+    track.play();
+
+    setTimeout(() => {
+        document.getElementById(choice).classList.remove("opacity");
+    }, 200);
+}
+
+```
 
 
 ## Credits
