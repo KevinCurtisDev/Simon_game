@@ -35,7 +35,7 @@ The Simon Game is primarily aimed at people looking to challenge their short ter
 
 While planning the the design of the game, an important consideration was layout for various devices and screen size, making sure to use white space strategically on large screens and being careful not to clutter smaller screen sizes with UI elements.
 
-You can see the wireframes at the following link: [Wire Frames](https://github.com/KevinCurtisDev/Simon_game/blob/master/assets/wirefames/Simon.pdf)
+You can see the wireframes at the following link: [Wire Frames](https://github.com/KevinCurtisDev/Simon_game/blob/master/assets/wirefames)
 
 The following questions were asked:
 
